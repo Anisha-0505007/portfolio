@@ -1,0 +1,153 @@
+html{
+    background-color:black;
+}
+.navbar{
+    display: flex;
+    height:70px;
+    background-color: rgb(223, 177, 229);
+    border-radius: 10px;
+    padding: 10px 0px 0px 10px;
+    margin-top: 0px;
+    position:fixed;
+    z-index:1;
+    top: 0;
+    right:0;
+    left:0;
+}
+.navbar>pre{
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 20px;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, #d72638, #3f88c5);
+}
+.navbar> img{
+    height:50px;
+    width:70px;
+    border-radius: 80%;
+}
+.navbar>a{
+    text-decoration: none;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: #4f46e5;
+}
+a.home{
+    margin-left: 800px;
+    color: #d72638;
+}
+a.port{
+    border:3px solid ;
+    height: 17px;
+    background-color: #facf9d;
+}
+body {
+            background-color:black; 
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, black,#0a000d, #700a53,#510528);
+            animation: gradientAnimation 10s ease infinite;
+        }
+        
+
+        /* --- Section Container for Layout --- */
+        .section-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+        
+        /* --- Profile Selection Section Styles --- */
+        #choose {
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fade-in 1s ease-out forwards;
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+
+        .profile-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .profile-card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slide-up 0.8s ease-out forwards;
+        }
+
+        /* Stagger the animation for each card */
+        .profile-card-container:nth-child(1) { animation-delay: 0.2s; }
+        .profile-card-container:nth-child(2) { animation-delay: 0.3s; }
+        .profile-card-container:nth-child(3) { animation-delay: 0.4s; }
+        .profile-card-container:nth-child(4) { animation-delay: 0.5s; }
+        
+        @keyframes slide-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-card {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, border-color 0.2s ease;
+            border: 4px solid transparent;
+        }
+        
+        .profile-card-container:hover .profile-card {
+            border-color: white;
+        }
+
+        .profile-card svg {
+            width: 60%;
+            height: 60%;
+        }
+
+        .profile-name {
+            color: #aaa;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .profile-card-container:hover .profile-name {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Profile Card Colors */
+        .recruiter { background: linear-gradient(135deg, #0077b5, #033046); }
+        .investor { background: linear-gradient(135deg, #4caf50, #08560c); }
+        .stalker { background: linear-gradient(135deg, #fbc02d, #844208); }
+        .collaborator { background: linear-gradient(135deg, #e53935, #810b0b); }
