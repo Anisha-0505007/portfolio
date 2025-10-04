@@ -107,7 +107,7 @@ a.about{
         margin: 20px;
         margin-right: 40px;
         border-radius: 50%;
-        background-image: url('/images/webdev.png');
+        background-image: url('images/webdev.png');
         background-repeat: no-repeat; 
         background-position: center; 
         background-size: 60%;
@@ -127,7 +127,7 @@ a.about{
         margin: 20px;
         margin-right: 40px;
         border-radius: 50%;
-        background-image: url('/images/python.png');
+        background-image: url('images/python.png');
         background-repeat: no-repeat; 
         background-position: center; 
         background-size: 60%;
@@ -148,7 +148,7 @@ a.about{
         background-color:powderblue;
         margin: 20px;
         border-radius: 50%;
-        background-image: url(/images/promotion.png);
+        background-image: url('images/promotion.png');
         background-repeat: no-repeat; 
         background-position: center; 
         background-size: 60%;
