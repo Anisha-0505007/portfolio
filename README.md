@@ -10,7 +10,8 @@ This site is designed to showcase my journey, skills, and projects as I grow in 
 - 💻 Built with **HTML5, CSS3**  
 
 Link:
-https://anisha-0505007.github.io/portfolio/
+https://anisha-0505007.github.io/portfolio/ 
+[Refresh it once if it does not load at one go.] 
 
 ## 🛠️ Tech Stack
 - **HTML5**  
