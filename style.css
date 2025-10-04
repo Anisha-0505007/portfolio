@@ -26,7 +26,7 @@
     width:70px;
     border-radius: 80%;
 }
-.navbar>a{
+.nav-links>a{
     text-decoration: none;
     margin-top: 20px;
     margin-right: 20px;
@@ -220,9 +220,85 @@ a.home{
 a.home{
     margin-left: 40px;
     }
-    .navbar>a {
+    .nav-links>a {
         font-size: 20px;
         margin: 3px;
+    }
+}
+/* --- NEW: Hide the checkbox input --- */
+#menu-toggle {
+    display: none;
+}
+
+/* --- MODIFIED: Hamburger Menu Styling --- */
+/* This now styles the <label> element */
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 101; 
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- NEW: CSS for the "X" animation when checkbox is checked --- */
+#menu-toggle:checked + .hamburger-menu span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+#menu-toggle:checked + .hamburger-menu span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger-menu span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* --- MODIFIED: Media Queries --- */
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex; /* Show the hamburger label on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide the nav links by default */
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        width: 100%;
+        background-color: rgba(223, 177, 229, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    /* --- THIS IS THE MAGIC --- */
+    /* Show the nav-links when the checkbox is checked */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    a.home {
+        margin-left: 0; /* Reset margin */
     }
 }
 

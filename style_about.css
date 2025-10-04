@@ -31,7 +31,7 @@ body{
     width:70px;
     border-radius: 80%;
 }
-.navbar>a{
+.nav-links>a{
     text-decoration: none;
     margin-top: 20px;
     margin-right: 20px;
@@ -399,4 +399,247 @@ a.about{
             from, to { border-color: transparent }
             50% { border-color: rgb(114, 6, 73); }
         }
+
+        /* --- NEW: Hide the checkbox input --- */
+#menu-toggle {
+    display: none;
+}
+
+/* --- MODIFIED: Hamburger Menu Styling --- */
+/* This now styles the <label> element */
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 101; 
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- NEW: CSS for the "X" animation when checkbox is checked --- */
+#menu-toggle:checked + .hamburger-menu span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+#menu-toggle:checked + .hamburger-menu span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger-menu span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* --- MODIFIED: Media Queries --- */
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex; /* Show the hamburger label on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide the nav links by default */
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        width: 100%;
+        background-color: rgba(223, 177, 229, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    /* --- THIS IS THE MAGIC --- */
+    /* Show the nav-links when the checkbox is checked */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    a.home {
+        margin-left: 0; /* Reset margin */
+    }
+}
+/*  Responsive Styling for first_part section */
+@media (max-width: 1024px) {
+    .first_part {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: none;
+        
+    }
+
+    .intro {
+        width: 90%;
+        height: auto;
+        box-shadow: 0 10px 20px #bf129a;
+    }
+
+    /* ✅ Fix for invisible h1 on small screens */
+
+  .intro > h1 {
+    width: 100% !important;
+    white-space: normal !important;
+    border: none !important;
+    overflow: visible !important;
+    animation: none !important;
+    color: white; /* ensure visible text */
+    text-align: center;
+  }
+
+
+
+    .intro > pre {
+        font-size: 14px;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .skills > div {
+        margin: 10px 0;
+    }
+
+    .first_part > img {
+        height: 300px;
+        width: 250px;
+        position: static;
+        margin: 20px 0;
+    }
+    .vertical-title-container{
+        top:1250px;
+        display: flex;
+        flex-direction: column; /* This makes the letters stack vertically */
+        position: absolute;
+            
+        z-index: 1;
+            
+    }
+    .vertical-title-container1 {
+            display: flex;
+            flex-direction: column; /* This makes the letters stack vertically */
+            position: absolute;
+            top: 2000px;
+            z-index: 1;
+            
+        }
+}
+
+/* 📲 For small tablets and large phones */
+@media (max-width: 768px) {
+    .first_part {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    /* ✅ Fix for invisible h1 on small screens */
+@media (max-width: 1024px) {
+  .intro > h1 {
+    width: 100% !important;
+    white-space: normal !important;
+    border: none !important;
+    overflow: visible !important;
+    animation: none !important;
+    color: white; /* ensure visible text */
+    text-align: center;
+  }
+}
+
+
+    .intro > pre {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .skills {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .first_part > img {
+        width: 200px;
+        height: 250px;
+        margin-top: 10px;
+    }
+}
+
+/* 📱 For very small phones (under 480px) */
+@media (max-width: 480px) {
+    /* ✅ Fix for invisible h1 on small screens */
+@media (max-width: 1024px) {
+  .intro > h1 {
+    width: 100% !important;
+    white-space: normal !important;
+    border: none !important;
+    overflow: visible !important;
+    animation: none !important;
+    color: white; /* ensure visible text */
+    text-align: center;
+  }
+}
+
+
+    .intro > pre {
+        font-size: 12px;
+        padding: 0 5px;
+    }
+
+    .first_part > img {
+        width: 180px;
+        height: 200px;
+    }
+
+    .skills > div {
+        width: 80px;
+        height: 80px;
+        font-size: 14px;
+    }
+
+    .Webdev, .Code, .Com {
+        background-size: 50%;
+    }
+    .vertical-title-container{
+        top:1250px;
+        display: flex;
+        flex-direction: column; /* This makes the letters stack vertically */
+        position: absolute;
+            
+        z-index: 1;
+            
+    }
+    .vertical-title-container1 {
+            display: flex;
+            flex-direction: column; /* This makes the letters stack vertically */
+            position: absolute;
+            top: 2000px;
+            z-index: 1;
+            
+        }
+}
+
+
 
